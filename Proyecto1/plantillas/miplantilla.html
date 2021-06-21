@@ -1,7 +1,22 @@
 <html>
     <body>
     <h1 style="color: brown;">
-    hola alumnos the primera pagina con nuestro github
+    hola alumnos the primera pagina con nuestro 
     </h1>
+    <p>con el professsor:  {{ nombre_persona.upper  }} {{ smiya.upper }} &copy; {{saaa.day}} /{{saaa.month}} /{{saaa.year}} </p> 
+     
+    <p><Strong>temas del cursi</Strong></p>
+      <ul>
+    <p>  {% if temas %}
+                    {% for t in temas %}
+                            <li>
+                            {{t}}
+                            </li>
+                     {% endfor %}
+         {% else %}
+           <p> no cursos por el momento</p>
+          {% endif %}
+    </p>
+</ul>
     </body>
     </html>

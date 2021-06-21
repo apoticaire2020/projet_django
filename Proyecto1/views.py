@@ -2,17 +2,26 @@ from django.http import HttpResponse
 import datetime
 from django.template import Template , Context
 
-
+class persona(object):
+    def __init__(self , nom , appe) :
+        self.nombre = nom
+        self.appelido = appe
 
 
 def saludo(request):
+     
+    p1 = persona("ahmed " , "fares")
+    #nombre = "ahmed aboudrar"
+    #appelido = "naqa"
+    ahora=  datetime.datetime.now()
     doc_externo = open('C:/Users/hp/OneDrive/demo/django/Proyecto1/Proyecto1/plantillas/miplantilla.html')
     
     plt = Template(doc_externo.read())
 
     doc_externo.close()
+    tem= ['plantillas' , 'vistas','formularios', 'modelos','database']
 
-    ctx = Context()
+    ctx = Context({'nombre_persona':p1.nombre , 'smiya':p1.appelido , 'saaa':ahora , 'temas':tem })
 
     documento = plt.render(ctx)
 
